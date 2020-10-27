@@ -1,0 +1,17 @@
+//drop database pantip;
+
+create database pantip;
+use pantip;
+
+
+create table title (numTitle int(10) unsigned auto_increment primary key,
+title varchar(30) not null,
+titleName varchar(30) not null,
+dateTitle varchar(30));
+
+create table comment (numComment int(10) unsigned auto_increment primary key,
+comment varchar(30) not null,
+dateComment varchar(30),
+numTitle int(10) unsigned,
+foreign key(numTitle) references title(numTitle)
+);
